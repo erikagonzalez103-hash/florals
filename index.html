@@ -93,10 +93,10 @@ a{color:inherit}
 
 /* ---------- hero ---------- */
 /* ---------- banner ---------- */
-.banner{max-width:1080px;margin:0 auto;padding:22px 24px 0}
+.banner{padding:0}
 .banner-inner{
-  position:relative;overflow:hidden;border-radius:2px;
-  height:clamp(300px,32vw,400px);
+  position:relative;overflow:hidden;
+  height:clamp(300px,32vw,440px);
   background:var(--paper);
 }
 .banner-inner img{
@@ -106,9 +106,10 @@ a{color:inherit}
 .banner-inner::after{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(90deg,
-    rgba(242,244,246,0) 30%,
-    rgba(242,244,246,.86) 52%,
-    var(--paper) 64%);
+    rgba(242,244,246,0) 42%,
+    rgba(242,244,246,.55) 62%,
+    rgba(242,244,246,.9) 78%,
+    var(--paper) 92%);
 }
 .banner-type{
   position:absolute;z-index:2;
