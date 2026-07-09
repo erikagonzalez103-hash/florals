@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Carolyn Lane Florals — Dallas floral design</title>
+<title>Velvet Radiance — Dallas floral design</title>
 <meta name="description" content="Floral design for small events, businesses and boutiques, and individual orders. Serving Dallas and 50 miles around it.">
-<meta property="og:title" content="Carolyn Lane Florals">
+<meta property="og:title" content="Velvet Radiance">
 <meta property="og:description" content="Floral design for small events, businesses and boutiques, and individual orders. Dallas and 50 miles around it.">
 <meta property="og:type" content="website">
 
@@ -16,7 +16,7 @@
 <style>
 /* ============================================================
    EDIT THESE FOUR THINGS AND YOU ARE DONE
-   Business name .......... search this file for: Carolyn Lane Florals
+   Business name .......... search this file for: Velvet Radiance
    Phone + email .......... see the CONFIG block at the bottom
    TikTok links ........... see the CONFIG block at the bottom
    ============================================================ */
@@ -59,8 +59,12 @@ a{color:inherit}
   border-bottom:1px solid var(--rule);
 }
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
-.mark{font-family:var(--display);font-size:19px;letter-spacing:.01em;text-decoration:none;white-space:nowrap}
+.mark{font-family:var(--display);font-size:19px;letter-spacing:.01em;text-decoration:none;white-space:nowrap;line-height:1.05;display:block}
 .mark em{font-style:italic;color:var(--acid)}
+.mark-sub{
+  display:block;font-family:var(--body);font-size:9.5px;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:3px;
+}
 .head-links{display:flex;align-items:center;gap:26px}
 .head-links a{font-size:14px;text-decoration:none;color:var(--muted)}
 .head-links a:hover{color:var(--ink)}
@@ -193,7 +197,7 @@ footer a:hover{color:var(--ink)}
 
 <header class="site-head">
   <div class="wrap">
-    <a class="mark" href="#top">Carolyn Lane <em>Florals</em></a>
+    <a class="mark" href="#top">Velvet <em>Radiance</em><span class="mark-sub">Floral design</span></a>
     <nav class="head-links">
       <a href="#work">Work</a>
       <a href="#services">Services</a>
@@ -356,7 +360,7 @@ footer a:hover{color:var(--ink)}
 
 <footer>
   <div class="wrap" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;width:100%">
-    <span>© <span id="yr"></span> Carolyn Lane Florals · Dallas, Texas</span>
+    <span>© <span id="yr"></span> Velvet Radiance · Dallas, Texas</span>
     <a href="#top">Back to top</a>
   </div>
 </footer>
@@ -370,10 +374,10 @@ const CONFIG = {
   email: "tieara.davis21@gmail.com",
   tiktokHandle: "blessedtee03",
   videos: [
-    { url:"https://www.tiktok.com/t/ZTSCn1rRE/", img:"1.jpg", label:"Event centerpiece", cat:"Small events",      tone:"var(--acid)" },
-    { url:"https://www.tiktok.com/t/ZTSCneb1w/", img:"2.jpg", label:"Hostess gift",      cat:"Individual orders", tone:"var(--alkaline)" },
-    { url:"https://www.tiktok.com/t/ZTSCne2C7/", img:"3.jpg", label:"Table florals",     cat:"Small events",      tone:"var(--petal)" },
-    { url:"https://www.tiktok.com/t/ZTSCnY7nK/", img:"4.jpg", label:"Thank-you flowers", cat:"Individual orders", tone:"var(--bract)" }
+    { url:"https://www.tiktok.com/t/ZTSCn1rRE/", img:"1.jpg", label:"Hostess gift",        cat:"Individual orders",      tone:"var(--petal)" },
+    { url:"https://www.tiktok.com/t/ZTSCneb1w/", img:"2.jpg", label:"Long-table florals",  cat:"Small events",           tone:"var(--acid)" },
+    { url:"https://www.tiktok.com/t/ZTSCne2C7/", img:"3.jpg", label:"Boutique arrangement",cat:"Businesses & boutiques", tone:"var(--bract)" },
+    { url:"https://www.tiktok.com/t/ZTSCnY7nK/", img:"4.jpg", label:"Thank-you flowers",   cat:"Individual orders",      tone:"var(--alkaline)" }
   ]
 };
 
@@ -396,7 +400,7 @@ document.getElementById("tiktok-cta").href = profile;
 document.getElementById("gal").innerHTML = CONFIG.videos.map(v => `
   <a class="tile" href="${v.url}" target="_blank" rel="noopener" style="--tone:${v.tone}">
     <div class="frame">
-      <img src="${v.img}" alt="${v.label} by Tieara" loading="lazy"
+      <img src="${v.img}" alt="${v.label} — floral arrangement by Velvet Radiance" loading="lazy"
            onload="this.closest('.frame').style.setProperty('--veil',1);this.closest('.frame').style.setProperty('--cap','#fff')"
            onerror="this.remove()">
       <span>${v.label}</span>
