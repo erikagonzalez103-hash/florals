@@ -93,15 +93,66 @@ a{color:inherit}
 
 /* ---------- hero ---------- */
 /* ---------- banner ---------- */
-.banner{width:100%;display:block;background:var(--paper)}
-.banner img{
-  display:block;width:100%;
-  height:clamp(260px,40vw,520px);
-  object-fit:cover;object-position:center;
+.banner{max-width:1080px;margin:0 auto;padding:22px 24px 0}
+.banner-inner{
+  position:relative;overflow:hidden;border-radius:2px;
+  height:clamp(300px,32vw,400px);
+  background:var(--paper);
+}
+.banner-inner img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:18% 45%;
+}
+.banner-inner::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,
+    rgba(242,244,246,0) 30%,
+    rgba(242,244,246,.86) 52%,
+    var(--paper) 64%);
+}
+.banner-type{
+  position:absolute;z-index:2;
+  right:5%;top:50%;transform:translateY(-50%);
+  width:36%;text-align:center;
+}
+.banner-name{
+  display:block;font-family:var(--display);font-weight:400;
+  font-size:clamp(20px,2.5vw,34px);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink);line-height:1.1;
+}
+.banner-sub{
+  display:block;font-family:var(--body);font-weight:600;
+  font-size:clamp(9px,.95vw,13px);letter-spacing:.42em;text-transform:uppercase;
+  color:var(--ink);margin-top:12px;padding-left:.42em;
+}
+.banner-rule{
+  display:block;width:46px;height:1px;background:var(--rule);
+  margin:16px auto;
+}
+.banner-tag{
+  display:block;font-family:var(--body);font-weight:600;
+  font-size:clamp(7.5px,.72vw,10px);letter-spacing:.26em;text-transform:uppercase;
+  color:var(--muted);
+}
+.banner-tag em{font-style:normal;color:var(--alkaline)}
+
+@media(max-width:720px){
+  .banner{padding:0}
+  .banner-inner{height:auto;aspect-ratio:4/5;border-radius:0}
+  .banner-inner img{object-position:26% 40%}
+  .banner-inner::after{
+    background:linear-gradient(180deg,
+      rgba(242,244,246,0) 44%,
+      rgba(242,244,246,.88) 66%,
+      var(--paper) 82%);
+  }
+  .banner-type{
+    right:auto;left:0;width:100%;top:auto;bottom:7%;transform:none;
+  }
 }
 
 /* ---------- hero ---------- */
-.hero{padding:72px 0 78px;border-bottom:1px solid var(--rule)}
+.hero{padding:54px 0 72px;border-bottom:1px solid var(--rule)}
 .hero h1{
   font-family:var(--display);font-weight:400;
   font-size:clamp(40px,6.4vw,76px);line-height:1.03;letter-spacing:-.015em;
@@ -236,7 +287,15 @@ footer a:hover{color:var(--ink)}
 <main id="top">
 
   <div class="banner">
-    <img src="hero.jpg" alt="Velvet Radiance Florals — an arrangement of hydrangea, calla lily, tulip and sunflower on a marble counter. Bold beauty. Thoughtful design." width="1400" height="933" fetchpriority="high">
+    <div class="banner-inner">
+      <img src="banner.jpg" alt="An arrangement of hydrangea, calla lily, tulip and sunflower in a glass vase on a marble counter" width="895" height="960" fetchpriority="high">
+      <div class="banner-type">
+        <span class="banner-name">Velvet Radiance</span>
+        <span class="banner-sub">Florals</span>
+        <span class="banner-rule" aria-hidden="true"></span>
+        <span class="banner-tag">Bold beauty. <em>Thoughtful design.</em></span>
+      </div>
+    </div>
   </div>
 
   <div class="hero">
